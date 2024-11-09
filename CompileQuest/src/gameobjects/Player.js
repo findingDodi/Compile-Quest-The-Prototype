@@ -1,13 +1,11 @@
-import {GameObjects, Physics} from "phaser";
 import {Utils} from "../Utils.js";
 
-export class Player extends Physics.Arcade.Image {
+export class Player extends Phaser.GameObjects.Sprite {
 
     scene = null;
-    fakeImage = null;
 
-    constructor(scene, x, y) {
-        super(scene, x, y, 'player');
+    constructor(scene, x, y, texture) {
+        super(scene, x, y, texture);
 
         this.scene = scene;
         this.scene.add.existing(this);

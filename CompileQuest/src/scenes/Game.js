@@ -21,7 +21,7 @@ export class Game extends Scene
             .setScale(2);
 
          */
-        this.player = new Player(this, Utils.SCREEN_CENTER_X + 200, Utils.SCREEN_CENTER_Y);
+        this.player = new Player(this, Utils.SCREEN_CENTER_X + 200, Utils.SCREEN_CENTER_Y, 'player');
         this.cursors = this.input.keyboard.createCursorKeys();
 
         this.input.once('pointerdown', () => {
