@@ -12,18 +12,13 @@ export class Chapter01_2 extends Scene
         super('Chapter01_2');
     }
 
-    create ()
+    create()
     {
         this.cameras.main.setBackgroundColor(0x00ff00);
 
         this.player = new Player(this, Utils.SCREEN_CENTER_X + 200, Utils.SCREEN_CENTER_Y, 'player');
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.input.once('pointerdown', () => {
-
-            this.scene.start('Chapter01_3');
-
-        });
     }
 
     update() {
