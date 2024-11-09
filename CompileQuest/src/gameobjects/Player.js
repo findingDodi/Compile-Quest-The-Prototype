@@ -23,13 +23,7 @@ export class Player extends Phaser.GameObjects.Sprite {
     update() {
         // wiggle
         //this.x += Math.sin(this.scene.time.now / 200) * 0.10;
-        if (this.x > Utils.SCREEN_END_X) {
-            this.scene.scene.start('GameOver');
-        }
 
-        if (this.x < 0) {
-            this.scene.scene.start('MainMenu');
-        }
     }
 
 }

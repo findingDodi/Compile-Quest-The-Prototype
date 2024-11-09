@@ -2,39 +2,34 @@ import { Scene } from 'phaser';
 import {Utils} from "../Utils.js";
 import {Player} from "../gameobjects/Player.js";
 
-export class Game extends Scene
+export class Chapter01_1 extends Scene
 {
     player = null;
     cursors = null;
-    counter = 0;
 
     constructor ()
     {
-        super('Game');
-        this.counter++;
+        super('Chapter01_1');
     }
 
     create ()
     {
-        this.cameras.main.setBackgroundColor(0x00ff00);
-        /*
-        this.add.image(Utils.SCREEN_CENTER_X, Utils.SCREEN_CENTER_Y, 'background')
-            .setAlpha(0.5)
-            .setScale(2);
+        this.cameras.main.setBackgroundColor(0x00bb00);
 
-         */
         this.player = new Player(this, Utils.SCREEN_CENTER_X + 200, Utils.SCREEN_CENTER_Y, 'player');
         this.cursors = this.input.keyboard.createCursorKeys();
 
         this.input.once('pointerdown', () => {
 
-            this.scene.start('GameOver');
+            this.scene.start('Chapter01_2');
 
         });
     }
 
     update() {
-        this.player.update();
+        if (this.player.x > Utils.SCREEN_END_X) {
+            this.scene.start('Chapter01_2');
+        }
 
         // Player movement entries
         if (this.cursors.left.isDown) {
@@ -43,8 +38,5 @@ export class Game extends Scene
         if (this.cursors.right.isDown) {
             this.player.move("right");
         }
-
-        console.log(this.counter);
-
     }
 }
