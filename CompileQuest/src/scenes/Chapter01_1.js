@@ -16,7 +16,7 @@ export class Chapter01_1 extends Scene
     {
         this.cameras.main.setBackgroundColor(0x00bb00);
 
-        this.player = new Player(this, Utils.SCREEN_CENTER_X + 200, Utils.SCREEN_CENTER_Y, 'player');
+        this.player = new Player(this, 50, Utils.SCREEN_CENTER_Y, 'player');
         this.cursors = this.input.keyboard.createCursorKeys();
 
     }
