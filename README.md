@@ -2,18 +2,38 @@
 The Prototype
 
 ## Funktionale Anforderungen
-- different scenes
+- Player faces direction of walking
+- Player animation
+- Leveldesign
 - clickable Objects
   - drag & drop / click & click
-- changing scenes by moving out of scenes
-- 4 game Scenes
-  - plus StartScene
-  - plus MenuScene
-- Player (can move left and right)
 - interaction with NPC (compiler troll)
 - inventory !!
 
+## umgesetzte Anforderungen
+- changing scenes by moving out of scenes
+- Player (can move left and right)
+- different scenes
+  - 4 game Scenes
+    - plus StartScene
+    - plus MenuScene
+
+## Leveldesign
+- Hintergründe
+- Scene Decoration
+  - static
+  - moving
+  - trigger
+- interaktive Objekte
+- NPCs
+- States
+  - Scenes
+  - inventory
+
 ## Probleme
+
+
+## gelöste Probleme
 - Scene Transition in vorherige Szenen (wegen Position)
   - globalen Speicher schreiben für GameState (lösgelöst von GameObjects und Scenes)
   - localStorage nutzen: https://www.dynetisgames.com/2018/10/28/how-save-load-player-progress-localstorage/

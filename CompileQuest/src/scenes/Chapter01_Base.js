@@ -34,6 +34,7 @@ export class Chapter01_Base extends Scene
         if (this.cursors.left.isDown) {
             this.player.move("left");
         }
+
         if (this.cursors.right.isDown) {
             this.player.move("right");
         }

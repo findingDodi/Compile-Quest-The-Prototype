@@ -14,8 +14,10 @@ export class Player extends Phaser.GameObjects.Sprite {
 
     move(direction) {
         if (direction === "left" && this.x > -80) {
+            this.flipX = true;
             this.x -= 5;
         } else if (direction === "right" && this.x < 2000) {
+            this.flipX = false;
             this.x += 5;
         }
     }
