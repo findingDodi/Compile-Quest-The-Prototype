@@ -18,8 +18,8 @@ export class Chapter01_2 extends Chapter01_Base
         this.cameras.main.setBackgroundColor(0x00ff00);
     }
 
-    update() {
-        super.update();
+    update(time, delta) {
+        super.update(time, delta);
 
         if (this.player.x > Utils.SCREEN_END_X) {
             Utils.savePrevious(2);

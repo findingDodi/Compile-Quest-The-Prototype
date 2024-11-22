@@ -29,7 +29,7 @@ export class Chapter01_Base extends Scene
 
     }
 
-    update() {
+    update(time, delta) {
         // Player movement entries
         if (this.cursors.left.isDown) {
             this.player.move("left");
@@ -38,5 +38,9 @@ export class Chapter01_Base extends Scene
         if (this.cursors.right.isDown) {
             this.player.move("right");
         }
+
+        this.player.update(delta);
+
+        //console.log(time, delta);
     }
 }

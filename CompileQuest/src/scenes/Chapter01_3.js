@@ -19,8 +19,8 @@ export class Chapter01_3 extends Chapter01_Base
 
     }
 
-    update() {
-        super.update();
+    update(time, delta) {
+        super.update(time, delta);
 
         if (this.player.x < 0) {
             Utils.savePrevious(3);

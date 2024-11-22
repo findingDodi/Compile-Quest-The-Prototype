@@ -18,8 +18,8 @@ export class Chapter01_1 extends Chapter01_Base
     }
 
 
-    update() {
-        super.update();
+    update(time, delta) {
+        super.update(time, delta);
 
         if (this.player.x > Utils.SCREEN_END_X) {
             Utils.savePrevious(1);

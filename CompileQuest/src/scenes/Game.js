@@ -33,7 +33,7 @@ export class Game extends Scene
         });
     }
 
-    update() {
+    update(time, delta) {
         this.player.update();
 
         // Player movement entries
