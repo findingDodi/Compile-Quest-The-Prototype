@@ -9,9 +9,21 @@ export class Utils {
     };
 
     static loadPrevious(){
-        console.log(parseInt(localStorage.getItem('previous_scene')));
-        console.log(localStorage.getItem('previous_scene'));
         return parseInt(localStorage.getItem('previous_scene'));
+    };
+
+    static saveCurrent(current_scene){
+        localStorage.setItem('current_scene', current_scene);
+    };
+
+    static loadCurrent(){
+        let current_scene = localStorage.getItem('current_scene');
+
+        if (current_scene !== null) {
+            return parseInt(current_scene);
+        }
+
+        return 1;
     };
 
 }

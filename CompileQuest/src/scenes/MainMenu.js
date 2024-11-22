@@ -22,8 +22,8 @@ export class MainMenu extends Scene
 
         this.input.once('pointerdown', () => {
 
-            this.scene.start('Chapter01_1');
-
+            let lastCurrentScene = Utils.loadCurrent();
+            this.scene.start('Chapter01_' + lastCurrentScene.toString());
         });
     }
 }

@@ -20,6 +20,7 @@ export class Chapter01_1 extends Chapter01_Base
 
     update() {
         super.update();
+
         if (this.player.x > Utils.SCREEN_END_X) {
             Utils.savePrevious(1);
             this.scene.start('Chapter01_2');

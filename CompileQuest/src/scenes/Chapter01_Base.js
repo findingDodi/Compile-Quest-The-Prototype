@@ -14,6 +14,9 @@ export class Chapter01_Base extends Scene
     {
         this.cameras.main.setBackgroundColor(0xff00ff);
 
+        Utils.saveCurrent(this.current);
+        Utils.loadCurrent();
+
         this.previous = Utils.loadPrevious();
 
         if (this.current < this.previous) {
