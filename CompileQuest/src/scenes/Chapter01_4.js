@@ -1,11 +1,11 @@
 import { Scene } from 'phaser';
 import {Utils} from "../Utils.js";
 import {Player} from "../gameobjects/Player.js";
+import {Chapter01_Base} from "./Chapter01_Base.js";
 
-export class Chapter01_4 extends Scene
+export class Chapter01_4 extends Chapter01_Base
 {
-    player = null;
-    cursors = null;
+    current = 4;
 
     constructor ()
     {
@@ -14,24 +14,16 @@ export class Chapter01_4 extends Scene
 
     create()
     {
+        super.create();
         this.cameras.main.setBackgroundColor(0x002200);
-
-        this.player = new Player(this, 50, Utils.SCREEN_CENTER_Y, 'player');
-        this.cursors = this.input.keyboard.createCursorKeys();
-
     }
 
     update() {
-        if (this.player.x < 0) {
-            this.scene.start('Chapter01_3');
-        }
+        super.update();
 
-        // Player movement entries
-        if (this.cursors.left.isDown) {
-            this.player.move("left");
-        }
-        if (this.cursors.right.isDown) {
-            this.player.move("right");
+        if (this.player.x < 0) {
+            Utils.savePrevious(4);
+            this.scene.start('Chapter01_3');
         }
     }
 }
