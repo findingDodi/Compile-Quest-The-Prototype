@@ -33,14 +33,12 @@ export class Chapter01_Base extends Scene
     update(time, delta) {
         // Player movement entries
         if (this.cursors.left.isDown) {
-            this.player.move("left");
+            this.player.move("left", delta);
         }
 
         if (this.cursors.right.isDown) {
-            this.player.move("right");
+            this.player.move("right", delta);
         }
-
-        this.player.update(delta);
 
         //console.log(time, delta);
     }

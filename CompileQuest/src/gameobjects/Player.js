@@ -4,7 +4,16 @@ export class Player extends Phaser.GameObjects.Sprite {
 
     scene = null;
     delta_counter = 0;
-    available_textures = ['player', 'player2', 'player3'];
+    available_textures = [
+        'player',
+        'player1',
+        'player2',
+        'player3',
+        'player4',
+        'player5',
+        'player6',
+        'player7',
+    ];
     current_texture_index = 0;
 
     constructor(scene, x, y, texture) {
@@ -15,8 +24,8 @@ export class Player extends Phaser.GameObjects.Sprite {
     }
 
 
-    move(direction) {
-        let time = new Date().getTime();
+    move(direction, delta) {
+        this.walk(delta);
 
         if (direction === "left" && this.x > -80) {
             this.flipX = true;
@@ -28,10 +37,10 @@ export class Player extends Phaser.GameObjects.Sprite {
         }
     }
 
-    update(delta) {
+    walk(delta) {
         this.delta_counter += delta;
 
-        if (this.delta_counter >= 1000) {
+        if (this.delta_counter >= 200) {
 
             this.current_texture_index++;
 
@@ -43,5 +52,9 @@ export class Player extends Phaser.GameObjects.Sprite {
 
             this.delta_counter = 0;
         }
+    }
+
+    update(args) {
+
     }
 }
