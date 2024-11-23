@@ -13,16 +13,17 @@ export class Chapter01_Base extends Scene
     create()
     {
         this.cameras.main.setBackgroundColor(0xff00ff);
-
         Utils.saveCurrent(this.current);
-        Utils.loadCurrent();
 
+        //Utils.loadCurrent();
         this.previous = Utils.loadPrevious();
 
+        this.add.image(Utils.SCREEN_CENTER_X, Utils.SCREEN_CENTER_Y, 'background0' + this.current);
+
         if (this.current < this.previous) {
-            this.player = new Player(this, Utils.SCREEN_END_X - 50, Utils.SCREEN_CENTER_Y, 'player');
+            this.player = new Player(this, Utils.SCREEN_END_X - 50, Utils.SCREEN_END_Y - 200, 'player');
         } else {
-            this.player = new Player(this, 50, Utils.SCREEN_CENTER_Y, 'player');
+            this.player = new Player(this, 50, Utils.SCREEN_END_Y - 200, 'player');
         }
 
         this.cursors = this.input.keyboard.createCursorKeys();
