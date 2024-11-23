@@ -22,7 +22,7 @@ export class Chapter01_4 extends Chapter01_Base
         super.update(time, delta);
 
         if (this.player.x < 0) {
-            Utils.savePrevious(4);
+            Utils.savePrevious(this.current);
             this.scene.start('Chapter01_3');
         }
     }

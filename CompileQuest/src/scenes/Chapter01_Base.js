@@ -1,6 +1,7 @@
 import { Scene } from 'phaser';
 import {Utils} from "../Utils.js";
 import {Player} from "../gameobjects/Player.js";
+import {Positions} from "../Positions.js";
 
 export class Chapter01_Base extends Scene
 {
@@ -18,12 +19,12 @@ export class Chapter01_Base extends Scene
         //Utils.loadCurrent();
         this.previous = Utils.loadPrevious();
 
-        this.add.image(Utils.SCREEN_CENTER_X, Utils.SCREEN_CENTER_Y, 'background0' + this.current);
+        this.add.image(Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'background0' + this.current);
 
         if (this.current < this.previous) {
-            this.player = new Player(this, Utils.SCREEN_END_X - 50, Utils.SCREEN_END_Y - 200, 'player');
+            this.player = new Player(this, Positions.PLAYER_END_X, Positions.PLAYER_END_Y, 'player');
         } else {
-            this.player = new Player(this, 50, Utils.SCREEN_END_Y - 200, 'player');
+            this.player = new Player(this, Positions.PLAYER_START_X, Positions.PLAYER_END_Y, 'player');
         }
 
         this.cursors = this.input.keyboard.createCursorKeys();

@@ -1,6 +1,7 @@
 import { Scene } from 'phaser';
 import {Utils} from "../Utils.js";
 import {Player} from "../gameobjects/Player.js";
+import {Positions} from "../Positions.js";
 
 export class Game extends Scene
 {
@@ -23,7 +24,7 @@ export class Game extends Scene
             .setScale(2);
 
          */
-        this.player = new Player(this, Utils.SCREEN_CENTER_X + 200, Utils.SCREEN_CENTER_Y, 'player');
+        this.player = new Player(this, Positions.PLAYER_START_X, Positions.PLAYER_END_Y, 'player');
         this.cursors = this.input.keyboard.createCursorKeys();
 
         this.input.once('pointerdown', () => {

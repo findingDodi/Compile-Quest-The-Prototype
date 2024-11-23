@@ -1,5 +1,6 @@
 import {Utils} from "../Utils.js";
 import {Chapter01_Base} from "./Chapter01_Base.js";
+import {Positions} from "../Positions.js";
 
 export class Chapter01_1 extends Chapter01_Base
 {
@@ -21,8 +22,8 @@ export class Chapter01_1 extends Chapter01_Base
     update(time, delta) {
         super.update(time, delta);
 
-        if (this.player.x > Utils.SCREEN_END_X) {
-            Utils.savePrevious(1);
+        if (this.player.x > Positions.SCREEN_END_X) {
+            Utils.savePrevious(this.current);
             this.scene.start('Chapter01_2');
         }
 

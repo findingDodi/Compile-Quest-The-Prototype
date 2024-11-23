@@ -1,0 +1,11 @@
+export const Positions = {
+    SCREEN_START_X: 0,
+    SCREEN_START_Y: 0,
+    SCREEN_CENTER_X: 1920/2,
+    SCREEN_CENTER_Y: 1080/2,
+    SCREEN_END_X: 1920,
+    SCREEN_END_Y: 1080,
+    PLAYER_END_X: 1920 - 50,
+    PLAYER_START_X: 50,
+    PLAYER_END_Y: 1080 - 330
+}
