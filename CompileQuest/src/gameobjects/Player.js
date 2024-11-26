@@ -2,7 +2,6 @@ import {Utils} from "../Utils.js";
 
 export class Player extends Phaser.GameObjects.Sprite {
 
-    scene = null;
     delta_counter = 0;
     available_textures = [
         'player',
@@ -19,8 +18,7 @@ export class Player extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture) {
         super(scene, x, y, texture);
 
-        this.scene = scene;
-        this.scene.add.existing(this);
+        scene.add.existing(this);
     }
 
 
