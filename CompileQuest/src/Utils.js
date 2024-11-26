@@ -22,6 +22,5 @@ export class Utils {
 
         return 1;
     };
-
 }
 

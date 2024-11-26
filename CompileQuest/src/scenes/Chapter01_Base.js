@@ -10,6 +10,8 @@ export class Chapter01_Base extends Scene
     cursors = null;
     previous = null;
     current = null;
+    has_prev = false;
+    has_next = false;
 
     create()
     {
@@ -39,6 +41,22 @@ export class Chapter01_Base extends Scene
 
         if (this.cursors.right.isDown) {
             this.player.move("right", delta);
+        }
+
+        if (this.player.x < 0) {
+            Utils.savePrevious(this.current);
+            if (this.has_prev) {
+                let following_scene = this.current--;
+                this.scene.start('Chapter01_' + following_scene);
+            }
+        }
+
+        if (this.player.x > Positions.SCREEN_END_X) {
+            Utils.savePrevious(this.current);
+            if (this.has_next) {
+                let following_scene = this.current++;
+                this.scene.start('Chapter01_' + following_scene);
+            }
         }
 
         //console.log(time, delta);

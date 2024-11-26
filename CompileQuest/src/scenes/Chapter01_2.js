@@ -7,6 +7,8 @@ import {Positions} from "../Positions.js";
 export class Chapter01_2 extends Chapter01_Base
 {
     current = 2;
+    has_prev = true;
+    has_next = true;
 
     constructor ()
     {
@@ -22,14 +24,5 @@ export class Chapter01_2 extends Chapter01_Base
     update(time, delta) {
         super.update(time, delta);
 
-        if (this.player.x > Positions.SCREEN_END_X) {
-            Utils.savePrevious(this.current);
-            this.scene.start('Chapter01_3');
-        }
-
-        if (this.player.x < 0) {
-            Utils.savePrevious(this.current);
-            this.scene.start('Chapter01_1');
-        }
     }
 }
