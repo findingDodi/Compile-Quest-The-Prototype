@@ -2,11 +2,13 @@ import { Scene } from 'phaser';
 import {Utils} from "../Utils.js";
 import {Player} from "../gameobjects/Player.js";
 import {Positions} from "../Positions.js";
+import {Inventory} from "../gameobjects/Inventory.js";
 
 export class Chapter01_Base extends Scene
 {
     scene = null;
     player = null;
+    inventory = null;
     cursors = null;
     previous = null;
     current = null;
@@ -22,6 +24,8 @@ export class Chapter01_Base extends Scene
         this.previous = Utils.loadPrevious();
 
         this.add.image(Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'background0' + this.current);
+
+        this.inventory = new Inventory(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'inventory')
 
         if (this.current < this.previous) {
             this.player = new Player(this, Positions.PLAYER_END_X, Positions.PLAYER_END_Y, 'player');
@@ -45,16 +49,18 @@ export class Chapter01_Base extends Scene
 
         if (this.player.x < 0) {
             Utils.savePrevious(this.current);
+
             if (this.has_prev) {
-                let following_scene = this.current--;
+                let following_scene = Utils.loadCurrent() - 1;
                 this.scene.start('Chapter01_' + following_scene);
             }
         }
 
         if (this.player.x > Positions.SCREEN_END_X) {
             Utils.savePrevious(this.current);
+
             if (this.has_next) {
-                let following_scene = this.current++;
+                let following_scene = Utils.loadCurrent() + 1;
                 this.scene.start('Chapter01_' + following_scene);
             }
         }
