@@ -2,17 +2,20 @@
 The Prototype
 
 ## Funktionale Anforderungen
-- Player faces direction of walking
-- Player animation
 - Leveldesign
 - clickable Objects
   - drag & drop / click & click
+  - tooltips
 - interaction with NPC (compiler troll)
+  - dialogs
+  - tooltips
 - inventory !!
 
 ## umgesetzte Anforderungen
 - changing scenes by moving out of scenes
 - Player (can move left and right)
+- Player faces direction of walking
+- Player animation
 - different scenes
   - 4 game Scenes
     - plus StartScene

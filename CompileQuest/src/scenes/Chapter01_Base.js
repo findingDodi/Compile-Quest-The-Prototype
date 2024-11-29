@@ -25,7 +25,13 @@ export class Chapter01_Base extends Scene
 
         this.add.image(Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'background0' + this.current);
 
-        this.inventory = new Inventory(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'inventory')
+        this.inventory = new Inventory(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'inventory');
+
+        this.add.text(Positions.SCENE_TEXT_X, Positions.SCENE_TEXT_Y, this.current, {
+            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
+            stroke: '#000000', strokeThickness: 8,
+            align: 'center'
+        }).setOrigin(0.5);
 
         if (this.current < this.previous) {
             this.player = new Player(this, Positions.PLAYER_END_X, Positions.PLAYER_END_Y, 'player');

@@ -7,5 +7,7 @@ export const Positions = {
     SCREEN_END_Y: 1080,
     PLAYER_END_X: 1920 - 50,
     PLAYER_START_X: 50,
-    PLAYER_END_Y: 1080 - 330
+    PLAYER_END_Y: 1080 - 330,
+    SCENE_TEXT_X: 50,
+    SCENE_TEXT_Y: 50
 }
