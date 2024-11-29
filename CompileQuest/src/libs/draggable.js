@@ -2,7 +2,7 @@
  * Uses the Phaser 3 built in touch events to allow a game object to be moved around a Phaser 3 Scene instance.
  * The method will listen for the GameObject Destroy event and cleanup the various event listeners that
  * were registered.
- * @param {Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle} gameObject
+ * @param {Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle | Phaser.GameObjects.Sprite} gameObject
  * @param {boolean} [enableLogs=false] enables logging for the various drag event callbacks. If the gameObject.name field
  *                                     is populated, this will be included in the log line.
  */
