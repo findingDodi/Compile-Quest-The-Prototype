@@ -4,7 +4,6 @@ The Prototype
 ## Funktionale Anforderungen
 - Leveldesign
 - clickable Objects
-  - drag & drop / click & click
   - tooltips
 - interaction with NPC (compiler troll)
   - dialogs
@@ -12,6 +11,8 @@ The Prototype
 - inventory !!
 
 ## umgesetzte Anforderungen
+- clickable Objects
+  - drag & drop / click & click
 - changing scenes by moving out of scenes
 - Player (can move left and right)
 - Player faces direction of walking
