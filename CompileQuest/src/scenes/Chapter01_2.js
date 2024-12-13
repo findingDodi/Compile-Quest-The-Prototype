@@ -1,8 +1,4 @@
-import { Scene } from 'phaser';
-import {Utils} from "../Utils.js";
-import {Player} from "../gameobjects/Player.js";
 import {Chapter01_Base} from "./Chapter01_Base.js";
-import {Positions} from "../Positions.js";
 
 export class Chapter01_2 extends Chapter01_Base
 {

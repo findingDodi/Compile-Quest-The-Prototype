@@ -1,7 +1,5 @@
-import {Utils} from "../Utils.js";
 import {Chapter01_Base} from "./Chapter01_Base.js";
 import {Positions} from "../Positions.js";
-import {ClickableObject} from "../gameobjects/ClickableObject.js";
 import {DraggableObject} from "../gameobjects/DraggableObject.js";
 
 export class Chapter01_1 extends Chapter01_Base
