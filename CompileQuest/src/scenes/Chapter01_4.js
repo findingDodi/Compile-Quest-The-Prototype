@@ -13,7 +13,6 @@ export class Chapter01_4 extends Chapter01_Base
     create()
     {
         super.create();
-        this.cameras.main.setBackgroundColor(0x002200);
     }
 
     update(time, delta) {

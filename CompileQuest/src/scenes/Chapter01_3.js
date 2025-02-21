@@ -14,7 +14,6 @@ export class Chapter01_3 extends Chapter01_Base
     create()
     {
         super.create();
-        this.cameras.main.setBackgroundColor(0x000000);
 
     }
 

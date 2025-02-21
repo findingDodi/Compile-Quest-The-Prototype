@@ -40,16 +40,20 @@ export class Chapter01_Base extends Scene
         }
 
         this.cursors = this.input.keyboard.createCursorKeys();
+        this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
 
     }
 
     update(time, delta) {
         // Player movement entries
-        if (this.cursors.left.isDown) {
+        if (this.cursors.left.isDown || this.keyA.isDown) {
             this.player.move("left", delta);
         }
 
-        if (this.cursors.right.isDown) {
+        if (this.cursors.right.isDown || this.keyD.isDown) {
             this.player.move("right", delta);
         }
 
