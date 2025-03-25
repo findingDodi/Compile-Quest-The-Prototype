@@ -1,6 +1,5 @@
 import {Chapter01_Base} from "./Chapter01_Base.js";
 import {Positions} from "../Positions.js";
-import {DraggableObject} from "../gameobjects/DraggableObject.js";
 import {ClickableObject} from "../gameobjects/ClickableObject.js";
 
 export class Chapter01_1 extends Chapter01_Base
@@ -8,7 +7,6 @@ export class Chapter01_1 extends Chapter01_Base
     current = 1;
     has_next = true;
     clickableObject = null;
-    dragableObject = null;
 
     constructor ()
     {
@@ -18,10 +16,8 @@ export class Chapter01_1 extends Chapter01_Base
     create()
     {
         super.create();
-        //this.cameras.main.setBackgroundColor(0x00bb00);
 
-        this.clickableObject = new ClickableObject(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_BOTTOM_Y, 'clicki');
-        this.clickableObject = new ClickableObject(this, 500, 500, 'clicki');
+        this.clickableObject = new ClickableObject(this, Positions.SCREEN_END_X - 100, Positions.SCREEN_BOTTOM_Y, 'code');
         //this.dragableObject = new DraggableObject(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_BOTTOM_Y, 'clicki');
 
 
@@ -29,7 +25,6 @@ export class Chapter01_1 extends Chapter01_Base
 
     update(time, delta) {
         super.update(time, delta);
-
     }
 
 }

@@ -9,15 +9,6 @@ The Prototype
   - dialogs
   - tooltips
 - inventory !!
-  box1 = [168, 158];
-  box2 = [363, 158];
-  box3 = [558, 158];
-  box4 = [753, 158];
-  box5 = [948, 158];
-  box6 = [1143, 158];
-  box7 = [1338, 158];
-  box8 = [1533, 158];
-  box9 = [1728, 158];
 
 ## umgesetzte Anforderungen
 - clickable Objects

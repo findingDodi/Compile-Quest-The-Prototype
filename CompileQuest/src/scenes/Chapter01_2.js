@@ -1,10 +1,13 @@
 import {Chapter01_Base} from "./Chapter01_Base.js";
+import {ClickableObject} from "../gameobjects/ClickableObject.js";
+import {Positions} from "../Positions.js";
 
 export class Chapter01_2 extends Chapter01_Base
 {
     current = 2;
     has_prev = true;
     has_next = true;
+    clickableObject = null;
 
     constructor ()
     {
@@ -14,6 +17,7 @@ export class Chapter01_2 extends Chapter01_Base
     create()
     {
         super.create();
+        this.clickableObject = new ClickableObject(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_BOTTOM_Y, 'code');
     }
 
     update(time, delta) {

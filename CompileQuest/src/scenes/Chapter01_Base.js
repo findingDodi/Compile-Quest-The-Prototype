@@ -15,8 +15,7 @@ export class Chapter01_Base extends Scene
     has_prev = false;
     has_next = false;
 
-    create()
-    {
+    create() {
         this.cameras.main.setBackgroundColor(0xff00ff);
         Utils.saveCurrent(this.current);
 
@@ -62,6 +61,7 @@ export class Chapter01_Base extends Scene
             if (this.has_prev) {
                 let following_scene = Utils.loadCurrent() - 1;
                 this.scene.start('Chapter01_' + following_scene);
+                //this.scene.start('Chapter01_' + following_scene, this.inventory);
             }
         }
 
@@ -71,9 +71,19 @@ export class Chapter01_Base extends Scene
             if (this.has_next) {
                 let following_scene = Utils.loadCurrent() + 1;
                 this.scene.start('Chapter01_' + following_scene);
+                //this.scene.start('Chapter01_' + following_scene, this.inventory);
             }
         }
-
-        //console.log(time, delta);
     }
+
+    /*
+    init(inventory = null) {
+        console.log(inventory);
+        if (this.inventory !== null) {
+            this.inventory = inventory;
+            this.inventory.sceneTransition(this);
+        }
+    }
+    */
+
 }
