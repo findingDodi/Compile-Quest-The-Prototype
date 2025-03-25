@@ -10,8 +10,9 @@ export class ClickableObject extends Phaser.GameObjects.Sprite {
     }
 
     onObjectClicked() {
-        const inventory = this.scene.inventory;
+        let inventory = this.scene.registry.get('inventory');
         inventory.addToInventory(this);
+
     }
 
 }

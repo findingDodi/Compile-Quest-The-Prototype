@@ -3,9 +3,9 @@ import {Utils} from "../Utils.js";
 import {Player} from "../gameobjects/Player.js";
 import {Positions} from "../Positions.js";
 import {Inventory} from "../gameobjects/Inventory.js";
+import {InventoryImage} from "../gameobjects/InventoryImage.js";
 
-export class Chapter01_Base extends Scene
-{
+export class Chapter01_Base extends Scene {
     scene = null;
     player = null;
     inventory = null;
@@ -18,13 +18,11 @@ export class Chapter01_Base extends Scene
     create() {
         this.cameras.main.setBackgroundColor(0xff00ff);
         Utils.saveCurrent(this.current);
-
-        //Utils.loadCurrent();
         this.previous = Utils.loadPrevious();
 
         this.add.image(Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'background0' + this.current);
 
-        this.inventory = new Inventory(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'inventory');
+        this.inventory = new InventoryImage(this, Positions.SCREEN_CENTER_X, Positions.SCREEN_CENTER_Y, 'inventory');
 
         this.add.text(Positions.SCENE_TEXT_X, Positions.SCENE_TEXT_Y, this.current, {
             fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
@@ -61,7 +59,6 @@ export class Chapter01_Base extends Scene
             if (this.has_prev) {
                 let following_scene = Utils.loadCurrent() - 1;
                 this.scene.start('Chapter01_' + following_scene);
-                //this.scene.start('Chapter01_' + following_scene, this.inventory);
             }
         }
 
@@ -71,19 +68,7 @@ export class Chapter01_Base extends Scene
             if (this.has_next) {
                 let following_scene = Utils.loadCurrent() + 1;
                 this.scene.start('Chapter01_' + following_scene);
-                //this.scene.start('Chapter01_' + following_scene, this.inventory);
             }
         }
     }
-
-    /*
-    init(inventory = null) {
-        console.log(inventory);
-        if (this.inventory !== null) {
-            this.inventory = inventory;
-            this.inventory.sceneTransition(this);
-        }
-    }
-    */
-
 }

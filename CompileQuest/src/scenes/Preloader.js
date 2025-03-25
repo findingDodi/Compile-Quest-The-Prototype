@@ -1,6 +1,7 @@
 import { Scene } from 'phaser';
 import {Utils} from "../Utils.js";
 import {Positions} from "../Positions.js";
+import {Inventory} from "../gameobjects/Inventory.js";
 
 export class Preloader extends Scene
 {

@@ -5,10 +5,14 @@ The Prototype
 - Leveldesign
 - clickable Objects
   - tooltips
+    - assets!
 - interaction with NPC (compiler troll)
   - dialogs
   - tooltips
-- inventory !!
+- inventory
+  - separated Image from logic
+- Scenes + Transitions
+  - maybe 1 Scene for 1 Chapter ?
 
 ## umgesetzte Anforderungen
 - clickable Objects

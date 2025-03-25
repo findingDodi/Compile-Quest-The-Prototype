@@ -20,7 +20,7 @@ export class Chapter01_4 extends Chapter01_Base
         super.create();
         this.clickableObject = new ClickableObject(this, Positions.SCREEN_START_X, Positions.SCREEN_BOTTOM_Y, 'code');
         this.npc = new NPC(this, Positions.PLAYER_END_X -100, Positions.PLAYER_END_Y +100, 'monster');
-        this.npc.flipX = true;
+        //this.npc.flipX = true;
         /*
         this.scene.tweens.add({
             targets: this.npc,
