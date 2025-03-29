@@ -1,6 +1,6 @@
 import { InventoryBox } from "./InventoryBox.js";
 
-export class Inventory extends Phaser.GameObjects.Image {
+export class Inventory {
     boxPositions = [
         [168, 158],
         [363, 158],
@@ -16,11 +16,7 @@ export class Inventory extends Phaser.GameObjects.Image {
     /** @type InventoryBox[] **/
     inventoryBoxes = [];
 
-    constructor(scene, x, y, texture) {
-        super(scene, x, y, texture);
-
-        scene.add.existing(this);
-
+    constructor() {
         for (let i = 0; i < this.boxPositions.length; i++) {
             let box = new InventoryBox(this.boxPositions[i][0], this.boxPositions[i][1]);
             this.inventoryBoxes.push(box);
